@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chachingpod | Bağlantılar - Links</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Dil Seçici -->
+        <div class="language-selector">
+            <button id="btn-tr" class="lang-btn active" onclick="setLanguage('tr')">TR</button>
+            <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <!-- Profil Alanı -->
+        <div class="profile">
+            <img src="images/logo.png" alt="Chachingpod Logo" class="avatar">
+            <h1>
+                <p id="profile-bio" data-tr="Your Gateway to Global Etsy Sales"
+                    data-en="Your Gateway to Global Etsy Sales">
+                    Your Gateway to Global Etsy Sales</p>
+            </h1>
+        </div>
+
+        <!-- Link Kartları -->
+        <div class="links">
+            <!-- Website -->
+            <a href="https://chachingpod.com" target="_blank" class="link-card">
+                <i class="fas fa-globe"></i>
+                <span data-tr="Websitemizi Ziyaret Edin" data-en="Visit Our Website">Websitemizi Ziyaret Edin</span>
+            </a>
+
+            <!-- Etsy Mağazası -->
+            <a href="https://www.etsy.com/shop/NovaPixelWallpaper" target="_blank" class="link-card">
+                <i class="fab fa-etsy"></i>
+                <span data-tr="Etsy Mağazamız" data-en="Our Etsy Shop">Etsy Mağazamız</span>
+            </a>
+
+            <!-- New Katalog (Featured Card) -->
+            <a href="#" target="_blank" class="link-card link-card-featured"
+                style="background-image: url('images/Katalog2026.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <span class="badge-new">NEW</span>
+            </a>
+
+            <!-- Tüm Kataloglar -->
+            <a href="#" target="_blank" class="link-card">
+                <i class="fas fa-folder-open"></i>
+                <span data-tr="Tüm Kataloglar" data-en="All Catalogs">Tüm Kataloglar</span>
+            </a>
+
+            <!-- Whatsapp İletişim -->
+            <a href="https://wa.me/905304267134" target="_blank" class="link-card">
+                <i class="fab fa-whatsapp"></i>
+                <span data-tr="WhatsApp İletişim" data-en="WhatsApp Contact">WhatsApp İletişim</span>
+            </a>
+
+            <!-- Kurumsal Telefon -->
+            <a href="tel:+905304267134" class="link-card">
+                <i class="fas fa-phone"></i>
+                <span data-tr="Kurumsal Telefon" data-en="Business Phone">Kurumsal Telefon</span>
+            </a>
+
+            <!-- Mail İletişim -->
+            <a href="mailto:info@chachingpod.com" class="link-card">
+                <i class="fas fa-envelope"></i>
+                <span data-tr="E-posta İletişimi" data-en="Email Contact">E-posta İletişimi</span>
+            </a>
+
+            <!-- Konum -->
+            <a href="https://maps.app.goo.gl/y8dhp1Z1g8dk6giQ6" target="_blank" class="link-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <span data-tr="Konumumuz" data-en="Our Location">Konumumuz</span>
+            </a>
+        </div>
+
+        <!-- Sosyal İkonlar -->
+        <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" title="LinkedIn"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://www.pinterest.com/novapixelwallpaper/" target="_blank" aria-label="Pinterest"
+                title="Pinterest"><i class="fab fa-pinterest"></i></a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Facebook"><i
+                    class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+
+    <!-- Dil Değiştirme Scripti -->
+    <script>
+        function setLanguage(lang) {
+            // Dil butonlarının aktifliğini güncelle
+            document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            // HTML lang özelliğini güncelle
+            document.documentElement.lang = lang;
+
+            // data-tr ve data-en özniteliklerine sahip tüm elementleri güncelle
+            document.querySelectorAll('[data-tr]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) {
+                    el.textContent = text;
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
